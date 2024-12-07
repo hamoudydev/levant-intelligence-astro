@@ -1,0 +1,406 @@
+---
+const {
+  titleOne,
+  titleTwo,
+  titleThree,
+  titleFour,
+  textOne,
+  textTwo,
+  textThree,
+  textFour,
+} = Astro.props;
+---
+<!-- ============================================ -->
+<!--                Side By Side                  -->
+<!-- ============================================ -->
+
+<section id="RPsbs-1008">
+  <div class="cs-container">
+      <div class="cs-image-group">
+          <picture class="cs-picture">
+              <!--Desktop-->
+              <source media="(min-width: 1024px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/beef2.jpg">
+              <!--Tablet-->
+              <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/beef2-tablet.jpg">
+              <!--Mobile-->
+              <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/beef2-m.jpg">
+              <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/beef2.jpg" alt="beef" width="522" height="461" aria-hidden="true">
+          </picture>
+          <img class="cs-seal" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/seal2.svg" alt="seal" width="190" height="182">
+      </div>
+      <!--                   
+    These "Micro Stitches" are to be placed inside the .cs-content group of Side By Side Stitches.  Typically after the .cs-title or .cs-text. They are used to add more design flair to a Stitch as well as convey more information in a different way.
+-->
+
+<ul id="list-1186" class="cs-ul">
+  <li class="cs-li">
+      <picture class="cs-li-picture">
+          <img class="cs-li-icon" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/247.svg" decoding="async" alt="icon" width="32" height="32" loading="lazy">
+      </picture>
+      <div class="cs-flex">
+          <h3 class="cs-h3">{titleOne}</h3>
+          <p class="cs-li-text">
+              {textOne}
+          </p>
+      </div>
+  </li>
+  <li class="cs-li">
+      <picture class="cs-li-picture">
+          <img class="cs-li-icon" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/members.svg" decoding="async" alt="icon" width="32" height="32" loading="lazy">
+      </picture>
+      <div class="cs-flex">
+          <h3 class="cs-h3">{titleTwo}</h3>
+          <p class="cs-li-text">
+              {textTwo}
+          </p>
+      </div>
+  </li>
+
+</ul>
+                              
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!--             Side By Side Reverse             -->
+<!-- ============================================ -->
+
+<section id="RPsbsr-1008">
+  <div class="cs-container">
+      <div class="cs-image-group">
+          <picture class="cs-picture">
+              <!--Desktop-->
+              <source media="(min-width: 1024px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/beef2.jpg">
+              <!--Tablet-->
+              <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/beef2-tablet.jpg">
+              <!--Mobile-->
+              <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/beef2-m.jpg">
+              <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/beef2.jpg" alt="beef" width="522" height="461" aria-hidden="true">
+          </picture>
+          <img class="cs-seal" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/seal2.svg" alt="seal" width="190" height="182">
+      </div>
+      <ul id="list-1186" class="cs-ul">
+        <li class="cs-li">
+            <picture class="cs-li-picture">
+                <img class="cs-li-icon" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/247.svg" decoding="async" alt="icon" width="32" height="32" loading="lazy">
+            </picture>
+            <div class="cs-flex">
+                <h3 class="cs-h3">{titleThree}</h3>
+                <p class="cs-li-text">
+                    {textThree}
+                </p>
+            </div>
+        </li>
+        <li class="cs-li">
+            <picture class="cs-li-picture">
+                <img class="cs-li-icon" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/members.svg" decoding="async" alt="icon" width="32" height="32" loading="lazy">
+            </picture>
+            <div class="cs-flex">
+                <h3 class="cs-h3">{titleFour}</h3>
+                <p class="cs-li-text">
+                    {textFour}
+            </div>
+        </li>
+      
+      </ul>
+  </div>
+</section>
+                              
+</section>
+                              
+<style lang="less">
+/*-- -------------------------- -->
+<---       Side By Side         -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #RPsbs-1008,
+    #RPsbsr-1008 {
+        padding: var(--sectionPadding);
+
+        .cs-container {
+            width: 100%;
+            /* changes to 1280px at desktop */
+            max-width: (800/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: left;
+            width: 100%;
+            /* changes to 522px at desktop */
+            max-width: (578/16rem);
+            margin-top: (-16/16rem);
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: flex-start;
+        }
+
+        .cs-text {
+            margin-bottom: (16/16rem);
+            &:last-of-type {
+                margin-bottom: (32/16rem);
+            }
+        }
+
+        .cs-spacer {
+            width: 100%;
+            /* 16px - 24px */
+            height: clamp(1rem, 3vw, 1.5rem);
+            display: block;
+        }
+
+        .cs-button-solid {
+            font-size: (16/16rem);
+            /* 46px - 56px */
+            line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+            text-decoration: none;
+            font-weight: 700;
+            text-align: center;
+            margin: 0;
+            color: #fff;
+            min-width: (150/16rem);
+            padding: 0 (32/16rem);
+            background-color: var(--primary);
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            /* prevents padding from adding to the width */
+            box-sizing: border-box;
+
+            &:before {
+                content: "";
+                position: absolute;
+                height: 100%;
+                width: 0%;
+                background: #000;
+                opacity: 1;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                transition: width 0.3s;
+            }
+
+            &:hover {
+                &:before {
+                    width: 100%;
+                }
+            }
+        }
+
+        .cs-image-group {
+            width: 100%;
+        }
+
+        .cs-picture {
+            width: 100%;
+            height: (261/16rem);
+            border: 12px solid #fff;
+            background-color: #fff;
+            display: block;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            position: relative;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                /* makes it behave like a background image */
+                object-fit: cover;
+            }
+        }
+
+        .cs-seal {
+            /* changes to a clamp(104px - 190px) at desktop */
+            width: (104/16rem);
+            height: auto;
+            /* 104px - 190px */
+            /* wrapped clamp in calc function to make the value negative, and multiply by half (.5) the height to it always overlaps the bg image by half its height */
+            margin-top: ~"calc(clamp(6.5rem, 12vw, 11.875rem)*-.5)";
+            margin-left: auto;
+            /* 28px - 120px */
+            margin-right: clamp(1.75rem, 10vw, 7.5rem);
+            background-color: #fff;
+            border: clamp(6px, 0.8vw, 12px) solid #fff;
+            border-radius: 50%;
+            display: block;
+            position: relative;
+            /* make it rest on top of the bg picture */
+            z-index: 10;
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #RPsbs-1008,
+    #RPsbsr-1008 {
+        .cs-container {
+            align-items: flex-start;
+        }
+        .cs-flex-group {
+            flex-direction: row;
+        }
+
+        .cs-text {
+            columns: 2;
+            column-gap: (24/16rem);
+        }
+
+        .cs-spacer {
+            display: none;
+        }
+    }
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #RPsbs-1008,
+    #RPsbsr-1008 {
+        .cs-container {
+            max-width: (1280/16rem);
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            /* 100px - 200px */
+            gap: clamp(6.25rem, 13vw, 12.5rem);
+        }
+
+        .cs-image-group {
+            max-width: (542/16rem);
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+        }
+
+        .cs-picture {
+            height: (460/16rem);
+            aspect-ratio: initial;
+        }
+
+        .cs-seal {
+            /* 104 - 190px */
+            width: clamp(6.5rem, 13vw, 11.875rem);
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            /* subtract 12px (.75rem) to account for the border */
+            right: ~"calc((clamp(6.5rem, 13vw, 11.875rem)*-.5) + -.75rem)";
+            transform: translateY(-50%);
+        }
+
+        .cs-content {
+            flex: none;
+            width: 54%;
+            max-width: (542/16rem);
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---   Side By Side Reverse     -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #RPsbsr-1008 {
+        background-color: #f7f7f7;
+    }
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #RPsbsr-1008 {
+        .cs-container {
+            justify-content: flex-end;
+        }
+        .cs-image-group {
+            /* sends it to the right in the 2nd position */
+            order: 2;
+        }
+
+        .cs-seal {
+            /* subtract 12px (.75rem) to account for the border */
+            left: ~"calc((clamp(6.5rem, 13vw, 11.875rem)*-.5) + -.75rem)";
+            right: auto;
+        }
+    }
+}
+
+        /* Mobile - 360px */
+/* you can copy and paste these styles into the section CSS where you placed the #list-1186 HTML, or you can place it in your global stylesheet so you can reuse the HTML in any Side By Side section on your site. That way when you make changes to it, it will also change everywhere in the site */
+@media only screen and (min-width: 0rem) {
+    #list-1186 {
+        width: 100%;
+        max-width: (630/16rem);
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: (24/16rem);
+
+        .cs-li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            /* 16px - 20px */
+            gap: clamp(1rem, 2.5vw, 1.25rem);
+        }
+
+        .cs-li-picture {
+            /* 60px - 80px */
+            width: clamp(3.75rem, 6vw, 5rem);
+            height: clamp(3.75rem, 6vw, 5rem);
+            margin: 0;
+            background-color: #f7f7f7;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* prevents flexbox from squishing it */
+            flex: none;
+        }
+
+        .cs-li-icon {
+            /* 24px - 32px */
+            width: clamp(1.5rem, 3vw, 2rem);
+            height: auto;
+            display: block;
+        }
+
+        .cs-h3 {
+            font-size: (20/16rem);
+            line-height: 1.2em;
+            font-weight: 700;
+            text-align: left;
+            margin: 0 0 (12/16rem) 0;
+            color: var(--headerColor);
+        }
+
+        .cs-li-text {
+            font-size: (16/16rem);
+            line-height: 1.5em;
+            text-align: left;
+            margin: 0;
+            color: var(--bodyTextColor);
+        }
+    }
+}
+
+                                                        
+                                
+</style>

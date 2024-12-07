@@ -1,0 +1,75 @@
+---
+import BaseLayout from "src/layouts/BaseLayout.astro";
+import CTA from "@components/CTA.astro";
+import Hero from "@components/home/Hero.astro";
+import Services from "@components/home/Services.astro";
+import About from "@components/home/About.astro";
+import Reviews from "@components/home/Reviews.astro";
+---
+
+<BaseLayout
+  title="Levant Intelligence"
+  description="Valuable resources are often hidden in plain view, waiting to be discovered with the right expertise and tools."
+>
+  <Hero
+    title="Heating & Cooling Experts in Metro Detroit"
+    subTitle="Friendly, Honest, and Reliable. We are a team of experts in the heating and cooling industry in Metro Detroit."
+  />
+  <About
+  titleOne="Expertise"
+  titleTwo="Innovation"
+  titleThree="Customization"
+  titleFour="Client-Centric Approach"
+  textOne="Our team brings a wealth of experience and expertise in information technology consulting, data engineering, and analytics. Experience working for and with S&P 100 clients in the tech sector, we bring with us the latest innovations from Silicon Valley’s largest tech firms."
+  textTwo="We leverage cutting-edge technologies and methodologies to deliver innovative solutions that drive business growth and success."
+  textThree="We understand that every business is unique, which is why we offer customized solutions tailored to meet the specific needs and objectives of our clients."
+  textFour="We prioritize client satisfaction and strive to build long-term partnerships by delivering exceptional service and tangible results. We help our clients understand their technological maturity as well as develop a timeline to achieve their goals as a data driven organization."
+  />
+  <Services
+    topper="Our Services"
+    title="Meeting Industry Demands"
+    text="Much like the Phoenicians who extracted rare purple dye from creatures off the coast of modern-day Lebanon, we specialize in helping our clients extract valuable insights and opportunities from data, leveraging our expertise in information technology consulting."
+    serviceOneIcon="/assets/images/service-logo.png"
+    serviceOneLink=""
+    serviceOneLinkText="Read More"
+    serviceOneTitle="IT Consulting"
+    serviceOneText="Our team of experts provides comprehensive IT consulting services, assisting clients in system design, optimization, and implementation. We work closely with organizations to develop customized IT strategies that align with their business goals and objectives."
+    serviceOneImage=""
+    serviceOneImageAlt=""
+    serviceTwoIcon="/assets/images/service-logo.png"    
+    serviceTwoLink="/"
+    serviceTwoLinkText="Read More"
+    serviceTwoTitle="Data Engineering"
+    serviceTwoText="Leveraging advanced data engineering techniques and 15 years of professional experience, we help clients build robust data pipelines and infrastructure to collect, store, and process data efficiently. Our expertise in data engineering encompasses visualization, analysis, and machine learning, enabling clients to derive actionable insights from their data."
+    serviceTwoImage=""
+    serviceTwoImageAlt=""
+    serviceThreeIcon="/assets/images/service-logo.png"
+    serviceThreeLink="/"
+    serviceThreeLinkText="Read More"
+    serviceThreeTitle="Tactical Solutions"
+    serviceThreeText="In addition to our core services, we offer tactical solutions such as one-off data visualizations and datasets tailored to meet specific business needs. Whether it's creating interactive dashboards or conducting ad-hoc data analyses, we provide tactical solutions to address immediate challenges and opportunities."
+    serviceThreeImage=""
+    serviceThreeImageAlt=""
+  />
+
+  <Reviews
+    header="Reviews"
+    title="Trusted by Local Home Homeowners and Businesses"
+    subTitle="At Bless HVAC, we provide a wide range of services to meet your needs. We are a team of experts in the field and are dedicated to providing the best service possible. We are a team of experts in the field and are dedicated to providing the best service possible."
+    review1="Our unit stopped working during negative temps in Dearborn, and we were blessed to have BLESS come out and repair it. Very professional service!"
+    review2="Can't say enough great stuff about this company. They're very prompt, courteous and professional!"
+    reviewerOne="Nakita A."
+    reviewerOneTitle="Homeowner"
+    reviewerTwo="Samantha W."
+    reviewerTwoTitle="Homeowner"
+    reviewerOneImage="https://via.placeholder.com/150"
+    reviewerTwoImage="https://via.placeholder.com/150"
+  />
+  <CTA
+    description=""
+    image="/assets/images/cabinets2.jpg"
+    imageAlt="image of cabinets"
+    title1="24/7"
+    title2="Emergency Service"
+  />
+</BaseLayout>
