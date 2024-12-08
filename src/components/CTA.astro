@@ -1,161 +1,403 @@
 ---
-const { description, image, imageAlt, title1, title2 } = Astro.props;
+const { topper, title, image, imageAlt, } = Astro.props;
 ---
 
-<section id="cta">
-  <div class="container">
-    <h2 class="title">
-      {title1}
-      <br />
-      {title2}
-    </h2>
-    <p>
-      {description}
-    </p>
-    <a href="tel:313-378-3404" class="cs-button-solid">Call Now!</a>
-  </div>
-  <picture>
-    <img
-      aria-hidden="true"
-      decoding="async"
-      src={image}
-      alt={imageAlt}
-      loading="lazy"
-      width="2500"
-      height="1667"
-    />
-  </picture>
+<!-- ============================================ -->
+<!--                   Contact                    -->
+<!-- ============================================ -->
+
+<section id="contact-1750">
+    <div class="cs-container">
+        <div class="cs-form-group">
+            <div class="cs-content">
+                <span class="cs-topper">{topper}</span>
+                <h2 class="cs-title">{title}</h2>
+            </div>
+            <!--Form-->
+            <form name="submit-to-google-sheet" action="https://script.google.com/macros/s/AKfycbxQQ8alpi_grC5Czz5mHEM0qtUdG_j6gwNxJipFRPUz9xM4gaMIBnMLF8Wr3kqW5-V5Mg/exec" method="post" autocomplete="off" class="form-container">
+                <div class="form-group">
+                  <div class="label-wrapper"><label class="form-label" for="name">Name (required)</label></div>
+                  <input class="form-input" id="name" type="name" name="name" placeholder="First and Last" required/>
+                </div>
+                <div class="form-group">
+                  <div class="label-wrapper"><label class="form-label" for="email">Email Address (required)</label></div>
+                  <input class="form-input" id="email" type="name" name="email" placeholder="Email Address" required/>
+                </div>
+                <div class="form-group">
+                  <div class="label-wrapper"><label class="form-label" for="phone">Phone (required)</label></div>
+                  <input class="form-input" id="phone" type="tel" name="phone" placeholder="Phone Number" required/>
+                </div>
+                <button type="submit" id="submit_button" onclick="return validateForm()" class="submit-button" name="button" value="Submit form">Let's Go!</button>
+              </form> 
+    <script>
+    const scriptURL =
+      "https://script.google.com/macros/s/AKfycbxQQ8alpi_grC5Czz5mHEM0qtUdG_j6gwNxJipFRPUz9xM4gaMIBnMLF8Wr3kqW5-V5Mg/exec";
+    const form = document.forms["submit-to-google-sheet"];
+    const submitButton = document.getElementById("submit_button"); // Get the submit button
+    const responseMessage = document.getElementById("response_message");
+    
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+    
+      // Change button text to "Submitting..." when the form is submitted
+      submitButton.innerText = "Submitting...";
+      submitButton.disabled = true; // Optional: Disable the button to prevent multiple submissions
+    
+      fetch(scriptURL, { method: "POST", body: new FormData(form) })
+        .then((response) => {
+          submitButton.innerText = "Success!"; // Revert button text upon success
+          submitButton.disabled = false; // Re-enable the button
+          form.reset();
+        })
+        .catch((error) => {
+          responseMessage.innerHTML = "Error!";
+          submitButton.innerText = "Please Try Again"; // Revert button text upon failure
+          submitButton.disabled = false; // Re-enable the button
+        });
+    });
+    </script>
+        </div>
+ 
+        
+    </div>
+
+    <div class="cs-picture-group">
+        <picture>
+            <img 
+                src={image} 
+                alt={imageAlt || "background"} 
+                width="1920" 
+                height="1080" 
+                loading="lazy" 
+                decoding="async"
+                class="cs-background-image"
+            >
+        </picture>
+    </div>
+
 </section>
-
+                                
 <style lang="less">
-  /* Mobile */
-  @media only screen and (min-width: 0em) {
-    #cta {
-      padding: (50/16rem) 0;
-      position: relative;
+    /*-- -------------------------- -->
+<---          Contact           -->
+<--- -------------------------- -*/
 
-      &:before {
-        content: "";
-        width: 100%;
-        height: 100%;
-        background: #000;
-        opacity: 0.7;
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-      }
-
-      .container {
-        text-align: center;
-      }
-
-      picture {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -2;
-
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          position: absolute;
-          top: 0;
-          left: 0;
-        }
-      }
-
-      .title {
-        font-size: ~"min(9vw, 3rem)";
-        font-weight: 900;
-        line-height: 58/48;
-        text-align: center;
-        margin-bottom: (36/16rem);
-        color: #fff;
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #contact-1750 {
+        padding: var(--sectionPadding);
+        overflow: hidden;
         position: relative;
-      }
+        z-index: 1;
 
-      p {
-        text-align: center;
-        width: 96%;
-        max-width: (598/16rem);
-        margin: auto;
-        margin-bottom: (36/16rem);
-        color: #fff;
-        opacity: 1;
-      }
-    }
-  }
-
-  /* Small Desktop */
-  @media only screen and (min-width: 64em) {
-    #cta {
-      padding: (168/16rem) 0;
-    }
-  }
-
-  /* Large Desktop */
-  @media only screen and (min-width: 1300px) {
-    #cta {
-      margin-top: (100/16rem);
-      position: relative;
-      &:before {
-        display: none;
-      }
-      &:after {
-        content: "";
-        width: (2000/16rem);
-        height: (1108/16rem);
-        background: url("/assets/svgs/cta-squares.svg");
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
-        opacity: 1;
-        display: block;
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        z-index: -3;
-        transform: translateX(-50%);
-      }
-      .container {
-        width: 90.0625%;
-        margin: auto;
-      }
-
-      picture {
-        width: 90.0625%;
-        left: 50%;
-        transform: translateX(-50%);
-
-        &:before {
-          content: "";
-          width: 100%;
-          height: 100%;
-          background: #000;
-          opacity: 0.7;
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 0;
-          z-index: 1;
+        .cs-container {
+            width: 100%;
+            max-width: (704/16rem);
+            margin: auto;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: stretch;
+            gap: clamp(3rem, 5vw, 4rem);
         }
-      }
-    }
-  }
 
-  /* Dark Mode */
-  @media only screen and (min-width: 0em) {
-    body.dark-mode {
-      #cta {
-        &:after {
-          display: none;
+        .cs-content {
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
-      }
+
+        .cs-form-group {
+            text-align: center;
+            width: 100%;
+            margin: auto;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cs-title {
+            margin: 0 0 (24/16rem);
+            color: #fff;
+            text-align: center;
+        }
+
+        .cs-form {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: (16/16rem);
+        }
+
+        .cs-label {
+            font-size: (16/16rem);
+            font-weight: 700;
+            line-height: 1.2em;
+            color: var(--headerColor);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            grid-column: span 12;
+            gap: (8/16rem);
+        }
+
+        .cs-input {
+            font-size: (16/16rem);
+            width: 100%;
+            height: clamp(2.875rem, 4.5vw, 3.5rem);
+            box-sizing: border-box;
+            padding: 0;
+            padding-left: (24/16rem);
+            background-color: #f7f7f7;
+            color: var(--headerColor);
+            border: none;
+
+            &::placeholder {
+                color: var(--bodyTextColor);
+            }
+        }
+
+        .cs-textarea {
+            font-family: inherit;
+            min-height: (120/16rem);
+            padding-top: (24/16rem);
+        }
+
+        .cs-button-solid {
+            font-size: (16/16rem);
+            font-weight: 700;
+            line-height: clamp(2.875em, 5.5vw, 3.5em);
+            text-align: center;
+            text-decoration: none;
+            min-width: (150/16rem);
+            margin: 0;
+            box-sizing: border-box;
+            padding: 0 (24/16rem);
+            background-color: var(--primary);
+            overflow: hidden;
+            color: #1a1a1a;
+            border: none;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            transition: color 0.3s;
+
+            &:before {
+                content: "";
+                width: 0%;
+                height: 100%;
+                background: #000;
+                opacity: 1;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                transition: width 0.3s;
+            }
+
+            &:hover {
+                color: #fff;
+                &:before {
+                    width: 100%;
+                }
+            }
+        }
+
+        .cs-submit {
+            margin: (16/16rem) 0 0;
+            color: var(--bodyTextColorWhite);
+            grid-column: span 12;
+            justify-self: flex-start;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .cs-info-group {
+            display: flex;
+            flex-direction: column;
+            gap: (24/16rem);
+        }
+
+        .cs-detail {
+            font-size: (20/16rem);
+            font-weight: 700;
+            line-height: 1.2em;
+            color: var(--bodyTextColor);
+            display: block;
+        }
+
+        .cs-picture-group {
+            width: 100%;
+            height: 100%;
+            max-height: none;
+            margin-top: 0;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: none;
+            z-index: -1;
+        }
+
+        .cs-iframe {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .cs-graphic {
+            width: 100%;
+            min-width: (1280/16rem);
+            height: auto;
+            object-fit: cover;
+            position: absolute;
+            left: 50%;
+            z-index: 0;
+            transform: translateX(-50%);
+        }
+
+        .cs-top {
+            top: 0;
+        }
+
+        .cs-left {
+            left: 4%;
+            transform: rotate(270deg);
+            transform-origin: left;
+        }
+
+        .cs-bottom {
+            bottom: 0;
+            left: 0;
+            transform: rotateX(180deg);
+        }
+
+        .cs-dark {
+            display: none;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            width: 100%;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-top: 0.5rem;
+            height: 50px;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 12px 24px;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+
+        .form-label {
+            color: #fff;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .form-input {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        .cs-picture-group {
+            z-index: -2;
+        }
     }
-  }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #contact-1750 {
+        .cs-container {
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .cs-form-group {
+            flex: 1;
+        }
+
+        .cs-info-group {
+            flex: 1;
+        }
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #contact-1750 {
+        .cs-container {
+            width: 50%;
+            margin: 0 auto 0 0;
+            padding: (40/16rem) (24/16rem);
+        }
+
+        .cs-picture-group {
+            width: 100%;
+            margin: 0;
+            left: 0;
+        }
+    }
+}
+
+/* Large Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+    #contact-1750 {
+        .cs-label {
+            &:nth-of-type(2),
+            &:nth-of-type(3) {
+                grid-column: span 6;
+            }
+        }
+    }
+}
+
+/* Largest Desktop - 1920px */
+@media only screen and (min-width: 120rem) {
+    #contact-1750 {
+        padding-top: 7vw;
+        padding-bottom: 9vw;
+
+        .cs-container {
+            margin: 0 auto;
+            transform: none;
+        }
+    }
+}
+                                
 </style>

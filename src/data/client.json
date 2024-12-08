@@ -1,12 +1,12 @@
 {
-	"name": "Bless Heating & Cooling",
-	"email": "help@blesshvac.com",
-	"phoneForTel": "313-378-3404",
-	"phoneFormatted": "(313) 378-3404",
+	"name": "Levant Intelligence",
+	"email": "info@levantintelligence.com",
+	"phoneForTel": "",
+	"phoneFormatted": "",
 	"address": {
-		"city": "Dearborn",
-		"state": "MI",
-		"zip": "48126"
+		"city": "Washington D.C.",
+		"state": "",
+		"zip": ""
 	},
-	"domain": "www.blesshvac.com"
+	"domain": "www.levantintelligence.com"
 }

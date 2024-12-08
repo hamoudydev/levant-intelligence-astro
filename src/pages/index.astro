@@ -4,18 +4,18 @@ import CTA from "@components/CTA.astro";
 import Hero from "@components/home/Hero.astro";
 import Services from "@components/home/Services.astro";
 import About from "@components/home/About.astro";
-import Reviews from "@components/home/Reviews.astro";
+import Footer from "@components/Footer.astro";
 ---
 
 <BaseLayout
   title="Levant Intelligence"
-  description="Valuable resources are often hidden in plain view, waiting to be discovered with the right expertise and tools."
+  description="Navigate The Vast Sea of Data"
 >
   <Hero
-    title="Heating & Cooling Experts in Metro Detroit"
-    subTitle="Friendly, Honest, and Reliable. We are a team of experts in the heating and cooling industry in Metro Detroit."
+    title="Navigate The Vast Sea of Data"
+    subTitle=""
   />
-  <About
+ <!-- <About
   titleOne="Expertise"
   titleTwo="Innovation"
   titleThree="Customization"
@@ -24,7 +24,12 @@ import Reviews from "@components/home/Reviews.astro";
   textTwo="We leverage cutting-edge technologies and methodologies to deliver innovative solutions that drive business growth and success."
   textThree="We understand that every business is unique, which is why we offer customized solutions tailored to meet the specific needs and objectives of our clients."
   textFour="We prioritize client satisfaction and strive to build long-term partnerships by delivering exceptional service and tangible results. We help our clients understand their technological maturity as well as develop a timeline to achieve their goals as a data driven organization."
+  image1=""
+  image2=""
+  seal1=""
+  seal2=""
   />
+-->
   <Services
     topper="Our Services"
     title="Meeting Industry Demands"
@@ -52,24 +57,16 @@ import Reviews from "@components/home/Reviews.astro";
     serviceThreeImageAlt=""
   />
 
-  <Reviews
-    header="Reviews"
-    title="Trusted by Local Home Homeowners and Businesses"
-    subTitle="At Bless HVAC, we provide a wide range of services to meet your needs. We are a team of experts in the field and are dedicated to providing the best service possible. We are a team of experts in the field and are dedicated to providing the best service possible."
-    review1="Our unit stopped working during negative temps in Dearborn, and we were blessed to have BLESS come out and repair it. Very professional service!"
-    review2="Can't say enough great stuff about this company. They're very prompt, courteous and professional!"
-    reviewerOne="Nakita A."
-    reviewerOneTitle="Homeowner"
-    reviewerTwo="Samantha W."
-    reviewerTwoTitle="Homeowner"
-    reviewerOneImage="https://via.placeholder.com/150"
-    reviewerTwoImage="https://via.placeholder.com/150"
-  />
   <CTA
-    description=""
-    image="/assets/images/cabinets2.jpg"
-    imageAlt="image of cabinets"
-    title1="24/7"
-    title2="Emergency Service"
+    topper=""
+    title="Ready to Set Sail?"
+    image="/assets/images/renaissance.webp"
+    imageMedium="/assets/images/renaissance-medium.jpg"
+    imageSmall="/assets/images/renaissance-small.jpg"
+    imageAlt="image of Phoneician ship"
   />
+<Footer 
+  logo="/assets/images/logo-white.png"
+  words=""
+/>
 </BaseLayout>

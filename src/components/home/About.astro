@@ -8,6 +8,10 @@ const {
   textTwo,
   textThree,
   textFour,
+  image1,
+  image2,
+  seal1,
+  seal2,
 } = Astro.props;
 ---
 <!-- ============================================ -->
@@ -19,14 +23,14 @@ const {
       <div class="cs-image-group">
           <picture class="cs-picture">
               <!--Desktop-->
-              <source media="(min-width: 1024px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/beef2.jpg">
+              <source media="(min-width: 1024px)" srcset={image1}>
               <!--Tablet-->
-              <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/beef2-tablet.jpg">
+              <source media="(min-width: 601px)" srcset={image1}>
               <!--Mobile-->
-              <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/beef2-m.jpg">
-              <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/beef2.jpg" alt="beef" width="522" height="461" aria-hidden="true">
+              <source media="(max-width: 600px)" srcset={image1}>
+              <img loading="lazy" decoding="async" src={image1} alt="" width="522" height="461" aria-hidden="true">
           </picture>
-          <img class="cs-seal" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/seal2.svg" alt="seal" width="190" height="182">
+          <img class="cs-seal" loading="lazy" decoding="async" src={seal1} alt="seal" width="190" height="182">
       </div>
       <!--                   
     These "Micro Stitches" are to be placed inside the .cs-content group of Side By Side Stitches.  Typically after the .cs-title or .cs-text. They are used to add more design flair to a Stitch as well as convey more information in a different way.
@@ -70,14 +74,14 @@ const {
       <div class="cs-image-group">
           <picture class="cs-picture">
               <!--Desktop-->
-              <source media="(min-width: 1024px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/beef2.jpg">
+              <source media="(min-width: 1024px)" srcset={image2}>
               <!--Tablet-->
-              <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/beef2-tablet.jpg">
+              <source media="(min-width: 601px)" srcset={image2}>
               <!--Mobile-->
-              <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/beef2-m.jpg">
-              <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/beef2.jpg" alt="beef" width="522" height="461" aria-hidden="true">
+              <source media="(max-width: 600px)" srcset={image2}>
+              <img loading="lazy" decoding="async" src={image2} alt="" width="522" height="461" aria-hidden="true">
           </picture>
-          <img class="cs-seal" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/seal2.svg" alt="seal" width="190" height="182">
+          <img class="cs-seal" loading="lazy" decoding="async" src={seal2} alt="seal" width="190" height="182">
       </div>
       <ul id="list-1186" class="cs-ul">
         <li class="cs-li">
